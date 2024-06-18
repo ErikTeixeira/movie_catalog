@@ -7,7 +7,9 @@ import {
     BsWallet2,
     BsHourglassSplit,
     BsFillFileEarmarkTextFill,
-  } from "react-icons/bs";
+} from "react-icons/bs";
+import { RiMovie2Fill } from "react-icons/ri";
+import { LuCalendarDays } from "react-icons/lu";
 
 import MovieCard from "../../components/MovieCard"
 
@@ -31,6 +33,22 @@ const Movie = () => {
         // não precisa do results
         setMovie(data);
     }
+    
+    // Função para formatar a data
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    };
+
+    // Função para formatar o dinheiro
+    const formatCurrency = (number) => {
+        return number.toLocaleString("en-US", 
+            {style: "currency", currency: "USD"}
+        )
+    }
 
     useEffect( () => {
         
@@ -48,30 +66,46 @@ const Movie = () => {
 
                 <div className="info" >
                     <h3>
+                        <LuCalendarDays /> Data de lançamento:
+                    </h3>
+                    <p> { formatDate(movie.release_date) } </p>
+                </div>
+
+                <div className="info" >
+                    <h3>
                         <BsWallet2 /> Orçamento:
                     </h3>
-                    <p> {movie.budget} </p>
+                    <p> { formatCurrency(movie.budget) } </p>
                 </div>
 
                 <div className="info" >
                     <h3>
                         <BsGraphUp /> Receita:
                     </h3>
-                    <p> {movie.revenue} </p>
+                    <p> { formatCurrency(movie.revenue) } </p>
                 </div>
 
                 <div className="info" >
                     <h3>
-                        <BsHourglassSplit /> Duração
+                        <BsHourglassSplit /> Duração:
                     </h3>
                     <p> {movie.runtime} minutos </p>
                 </div>
 
+                <div className="info">
+                        <h3>
+                            <RiMovie2Fill /> Gêneros:
+                        </h3>
+                        <p>
+                            {movie.genres.map((genre) => genre.name).join(", ")}
+                        </p>
+                    </div>
+
                 <div className="info description" >
                     <h3>
-                        <BsFillFileEarmarkTextFill /> Descrição
+                        <BsFillFileEarmarkTextFill /> Descrição:
                     </h3>
-                    <p> {movie.overview} minutos </p>
+                    <p> {movie.overview}</p>
                 </div>
             </>}
         </div>
