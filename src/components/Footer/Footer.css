@@ -1,0 +1,33 @@
+
+.footer-container {
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container .infos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.site-name {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.copyright-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    margin-top: 10px;
+}

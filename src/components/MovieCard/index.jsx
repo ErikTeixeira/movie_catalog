@@ -7,19 +7,29 @@ import "./MovieCard.css";
 
 const imgUrl = import.meta.env.VITE_IMG;
 
-const MovieCard = ( {movie, showLink = true} ) => {
-  return (
-    <div className="movie-card" >
-        <img src={imgUrl + movie.poster_path } alt={movie.title} />
+const MovieCard = ( {movie, movieImage, showLink = true} ) => {
 
-        <h2>{movie.title}</h2>
+  // desestruturação
+  const { id, backdrop_path, poster_path, title, vote_average } = movie;
+
+  const imagePath = movieImage === "backdrop_path" ? backdrop_path : poster_path;
+
+  return (
+    <div className="movie-card">
+
+      <img src={`${imgUrl}${imagePath}`} alt={title} />
+
+      <div className="movie-card-content">
+
+        <h2>{title}</h2>
 
         <p>
-            <FaStar /> {movie.vote_average}
+          <FaStar /> {vote_average}
         </p>
+        
+        {showLink && <Link to={`/movie/${id}`}>Detalhes</Link>}
 
-        {showLink && <Link to={`/movie/${movie.id}`} > Detalhes </Link>}
- 
+      </div>
     </div>
   )
 }

@@ -1,0 +1,67 @@
+.swiper-container {
+    width: 100%;
+    max-width: 1200px; /* Ajuste conforme necessário */
+    margin: auto;
+    padding: 0 20px; /* Ajuste conforme necessário */
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center; /* Centralizar slides */
+}
+
+
+/* Customizando os círculos de navegação */
+.swiper-pagination {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #5baaff;
+    opacity: 0.7;
+}
+
+/* Personalizando os círculos de navegação ativos */
+.swiper-pagination-bullet-active {
+    background-color: #ff2c73;
+}
+
+/* Customizando as setas de navegação */
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: rgb(62, 62, 62);
+    opacity: 0.7;
+    border-radius: 50%;
+    color: #007aff;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease, background-color 0.2s ease, border 0.2s ease; /* Animação de clique e hover */
+}
+
+/* Alterando o estilo das setas */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 2rem;
+}
+
+/* Animação ao clicar nas setas */
+.swiper-button-next:active,
+.swiper-button-prev:active {
+    transform: scale(0.9);
+}
+
+/* Animação ao passar o mouse sobre as setas */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #007aff;
+    color: #fff;
+}
+
+.swiper-button-next:hover:after,
+.swiper-button-prev:hover:after {
+    border-color: #fff;
+}

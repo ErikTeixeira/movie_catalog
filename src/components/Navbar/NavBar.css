@@ -6,6 +6,21 @@
     background-color: #121212;
 }
 
+#navbar2 {
+    font-size: 0.8rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+#navbar #link-catalogo {
+    padding-right: 4rem;
+}
+
+#navbar #icon-profile {
+    font-size: 1.7rem;
+}
+
 #navbar h2 a {
     display: flex;
     align-items: center;
@@ -14,7 +29,7 @@
 
 #navbar form {
     display: flex;
-    gap: .5rem;
+    gap: .4rem;
 }
 
 #navbar input{

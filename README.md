@@ -5,7 +5,9 @@
 
 criar o projeto - npm create vite@latest .
 
-dependencias instaladas - npm install react-icons react-router-dom
+dependencias instaladas 
+- npm install react-icons react-router-dom
+- npm install swiper
 
 ## React + Vite
 
